@@ -6,7 +6,7 @@ import {Text, View} from 'react-native';
 const HomeScreen = (props) => {
   return (
     <View style={{
-       height: 350,
+       height: 400,
        backgroundColor: '#a0abff',
        justifyContent: 'center',
        alignItems: 'center',

@@ -34,6 +34,7 @@ const DestinationSearch = (props) => {
           minLength={2}
           onPress={(data, details = null) => {
             setOriginPlace({data, details});
+            console.log(data, details);
           }}
           query={{
             key: GOOGLE_MAPS_APIKEY,
@@ -60,6 +61,7 @@ const DestinationSearch = (props) => {
           minLength={2}
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
+            console.log(data, details);
           }}
           query={{
             key: GOOGLE_MAPS_APIKEY,
