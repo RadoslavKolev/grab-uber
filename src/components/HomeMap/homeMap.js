@@ -1,19 +1,60 @@
 /* eslint-disable react-native/no-inline-styles */
 
 import React from 'react';
-import {Text, View} from 'react-native';
+import { Image } from 'react-native';
+import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
+import cars from '../../assets/data/cars';
 
-const HomeScreen = (props) => {
+const HomeMap = (props) => {
+  const getImage = (type) => {
+    if (type === 'UberX') {
+      return require('../../assets/images/top-UberX.png');
+    } else if (type === 'Comfort') {
+      return require('../../assets/images/top-Comfort.png');
+    } else {
+      return require('../../assets/images/top-UberXL.png');
+    }
+  };
+
   return (
-    <View style={{
-       height: 400,
-       backgroundColor: '#a0abff',
-       justifyContent: 'center',
-       alignItems: 'center',
-    }}>
-      <Text>I am a Map</Text>
-    </View>
+    <MapView
+      provider={PROVIDER_GOOGLE}
+      showsUserLocation={true}
+      initialRegion={{
+        latitude: 28.450627,
+        longitude: -16.263045,
+        latitudeDelta: 0.005,
+        longitudeDelta: 0.005,
+      }}
+      style={{
+        height: '100%',
+        width: '100%',
+      }}
+    >
+      {/* Displaying cars on the map */}
+      {cars.map((car) => (
+        <Marker
+          key={car.id}
+          coordinate={{
+            latitude: car.latitude,
+            longitude: car.longitude,
+          }}
+        >
+          <Image
+          style={{
+            width: 60,
+            height: 60,
+            resizeMode: 'contain',
+            transform: [{
+              rotate: `${car.heading}deg`,
+            }],
+          }}
+          source={getImage(car.type)}
+        />
+        </Marker>
+        ))}
+    </MapView>
   );
 };
 
-export default HomeScreen;
+export default HomeMap;

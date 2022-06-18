@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View } from 'react-native';
 import HomeMap from '../../components/HomeMap/homeMap';
@@ -8,7 +9,12 @@ const HomeScreen = (props) => {
   return (
     <View>
       {/* The Map */}
-      <HomeMap />
+      <View style={{
+        height: '50%',
+        width: '100%',
+      }}>
+        <HomeMap />
+      </View>
 
       {/* COVID Message */}
       <CovidMessage />

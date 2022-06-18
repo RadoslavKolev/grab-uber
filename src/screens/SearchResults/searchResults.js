@@ -14,7 +14,7 @@ const SearchResults = (props) => {
       <View style={{height: Dimensions.get('window'). height - 400}}>
         <HomeMap />
       </View>
-      
+
       <View style={{ height: 400, width: 388 }}>
         <UberTypes />
       </View>
