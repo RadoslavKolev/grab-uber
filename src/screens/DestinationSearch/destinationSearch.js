@@ -44,6 +44,8 @@ const DestinationSearch = (props) => {
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
           suppressDefaultStyles
+          currentLocation={true}
+          currentLocationLabel="Current Location"
           predefinedPlaces={[homePlace, workPlace]}
           renderRow={(data) => <PlaceRow data={data} />}
           renderDescription={(data) => data.description || data.vicinity}
