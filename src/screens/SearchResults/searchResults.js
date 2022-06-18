@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { View, Dimensions } from 'react-native';
-import HomeMap from '../../components/HomeMap/homeMap';
+import RouteMap from '../../components/RouteMap/routeMap';
 import UberTypes from '../../components/UberTypes/uberTypes';
 
 const SearchResults = (props) => {
@@ -12,7 +12,7 @@ const SearchResults = (props) => {
       justifyContent: 'space-between',
     }}>
       <View style={{height: Dimensions.get('window'). height - 400}}>
-        <HomeMap />
+        <RouteMap />
       </View>
 
       <View style={{ height: 400, width: 388 }}>
