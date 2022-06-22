@@ -1,17 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
- import React, {useEffect} from 'react';
- import { StatusBar, View, PermissionsAndroid, Platform } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen/homeScreen';
-import DestinationSearch from './src/screens/DestinationSearch/destinationSearch';
-import SearchResults from './src/screens/SearchResults/searchResults';
+import 'react-native-gesture-handler';
+import React, {useEffect} from 'react';
+import { StatusBar, View, PermissionsAndroid, Platform } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
+import RootNavigator from './src/navigation/Root';
 
 navigator.geolocation = require('@react-native-community/geolocation');
 console.log(navigator.geolocation);
@@ -56,11 +47,9 @@ export default function App() {
   }, []);
 
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <StatusBar style="auto" />
-      {/* <HomeScreen /> */}
-      <DestinationSearch />
-      {/* <SearchResults /> */}
+      <RootNavigator />
     </View>
   );
 }

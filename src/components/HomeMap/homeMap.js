@@ -29,6 +29,8 @@ const HomeMap = (props) => {
       style={{
         height: '100%',
         width: '100%',
+        minHeight: '50%',
+        minWidth: '50%',
       }}
     >
       {/* Displaying cars on the map */}

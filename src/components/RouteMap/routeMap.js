@@ -28,6 +28,7 @@ const RouteMap = (props) => {
       style={{
         height: '100%',
         width: '100%',
+        minHeight: '50%',
       }}
     >
       <MapViewDirections
