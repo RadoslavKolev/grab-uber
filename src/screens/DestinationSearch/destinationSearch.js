@@ -81,6 +81,7 @@ const DestinationSearch = (props) => {
           nearbyPlacesAPI="GooglePlacesSearch"
           debounce={400}
           suppressDefaultStyles
+          predefinedPlaces={[homePlace, workPlace]}
           renderRow={(data) => <PlaceRow data={data} />}
           styles={{
             textInput: styles.textInput,
