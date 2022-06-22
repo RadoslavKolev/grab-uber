@@ -15,9 +15,9 @@ const Root = (props) => {
         headerShown: false,
       }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Destinations" component={DestinationSearch} />
-        <Stack.Screen name="Results" component={SearchResults} />
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen name="DestinationSearch" component={DestinationSearch} />
+        <Stack.Screen name="SearchResults" component={SearchResults} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -4,18 +4,9 @@ import { View, SafeAreaView } from 'react-native';
 import styles from './styles';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import PlaceRow from './placeRow';
+import { useNavigation } from '@react-navigation/native';
 
 const DestinationSearch = (props) => {
-  const GOOGLE_MAPS_APIKEY = 'AIzaSyCJYRRFXU3JGkSshd9tz5ws_gdo7XvC7aM';
-  const [originPlace, setOriginPlace] = useState(null);
-  const [destinationPlace, setDestinationPlace] = useState(null);
-
-  useEffect(() => {
-    if (originPlace && destinationPlace) {
-      console.warn('Redirect to results');
-    }
-  }, [originPlace, destinationPlace]);
-
   const homePlace = {
     description: 'Home',
     geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
@@ -24,6 +15,20 @@ const DestinationSearch = (props) => {
     description: 'Work',
     geometry: { location: { lat: 48.8496818, lng: 2.2940881 } },
   };
+
+  const GOOGLE_MAPS_APIKEY = 'AIzaSyCJYRRFXU3JGkSshd9tz5ws_gdo7XvC7aM';
+  const [originPlace, setOriginPlace] = useState(null);
+  const [destinationPlace, setDestinationPlace] = useState(null);
+
+  const navigation = useNavigation();
+
+  useEffect(() => {
+    if (originPlace && destinationPlace) {
+      navigation.navigate('SearchResults');
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [originPlace, destinationPlace]);
+
   return (
     <SafeAreaView>
       <View style={styles.container}>
