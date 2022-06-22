@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     marginRight: 15,
   },
   locationText: {
-
+    color: 'black',
   },
   separator: {
     backgroundColor: '#efefef',

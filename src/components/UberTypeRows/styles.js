@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     marginBottom: 5,
+    color: 'black',
   },
   time: {
     color: '#5d5d5d',
@@ -32,6 +33,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 18,
     marginLeft: 5,
+    color: 'black',
   },
 });
 

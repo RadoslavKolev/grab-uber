@@ -20,7 +20,7 @@ const SearchResults = (props) => {
         <RouteMap />
       </View>
 
-      <View style={{ height: 400, width: 388 }}>
+      <View style={{ height: 400, width: 406, backgroundColor: '#ffffff' }}>
         <UberTypes />
       </View>
     </View>
