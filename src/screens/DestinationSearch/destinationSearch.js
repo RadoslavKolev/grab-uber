@@ -24,7 +24,10 @@ const DestinationSearch = (props) => {
 
   useEffect(() => {
     if (originPlace && destinationPlace) {
-      navigation.navigate('SearchResults');
+      navigation.navigate('SearchResults', {
+        originPlace,
+        destinationPlace,
+      });
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [originPlace, destinationPlace]);
@@ -39,7 +42,7 @@ const DestinationSearch = (props) => {
           minLength={2}
           onPress={(data, details = null) => {
             setOriginPlace({data, details});
-            console.log(data, details);
+            // console.log(data, details);
           }}
           query={{
             key: GOOGLE_MAPS_APIKEY,
@@ -68,7 +71,7 @@ const DestinationSearch = (props) => {
           minLength={2}
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
-            console.log(data, details);
+            // console.log(data, details);
           }}
           query={{
             key: GOOGLE_MAPS_APIKEY,
