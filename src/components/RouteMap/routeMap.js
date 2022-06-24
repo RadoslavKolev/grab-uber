@@ -1,27 +1,46 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
+
+import React, { useRef, useCallback } from 'react';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
 
 const GOOGLE_MAPS_APIKEY = 'AIzaSyCJYRRFXU3JGkSshd9tz5ws_gdo7XvC7aM';
 
-const RouteMap = (props) => {
-  const origin = {
-    latitude: 28.450627,
-    longitude: -16.263045,
+const RouteMap = ({ origin, destination }) => {
+  const originLoc = {
+    latitude: origin.details.geometry.location.lat,
+    longitude: origin.details.geometry.location.lng,
   };
-  const destination = {
-    latitude: 28.490627,
-    longitude: -16.273045,
+
+  const destinationLoc = {
+    latitude: destination.details.geometry.location.lat,
+    longitude: destination.details.geometry.location.lng,
   };
+
+  const mapRef = useRef(null);
+
+  // Rerun if the origin or destination changes
+  const onMapReadyHandler = useCallback(() => {
+    mapRef.current.fitToCoordinates([originLoc, destinationLoc], {
+      animated: true,
+      edgePadding: {
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50,
+      },
+    });
+  }, [mapRef]);
 
   return (
     <MapView
+      ref={mapRef}
       provider={PROVIDER_GOOGLE}
       showsUserLocation={true}
       initialRegion={{
-        latitude: 43.2141,
-        longitude: 27.9147,
+        latitude: originLoc.latitude,
+        longitude: originLoc.longitude,
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
       }}
@@ -30,21 +49,27 @@ const RouteMap = (props) => {
         width: '100%',
         minHeight: '50%',
       }}
+      onMapReady={onMapReadyHandler}
+      onMapLoaded={onMapReadyHandler}
     >
       <MapViewDirections
-        origin={origin}
-        destination={destination}
+        origin={originLoc}
+        destination={destinationLoc}
         apikey={GOOGLE_MAPS_APIKEY}
         strokeWidth={3}
         strokeColor="black"
       />
       <Marker
-        coordinate={origin}
+        coordinate={originLoc}
         title={'Origin'}
+        description={origin.description}
+        identifier="origin"
       />
       <Marker
-        coordinate={destination}
+        coordinate={destinationLoc}
         title={'Destination'}
+        description={destination.description}
+        identifier="destination"
       />
     </MapView>
   );

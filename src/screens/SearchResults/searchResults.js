@@ -9,7 +9,11 @@ import { useRoute } from '@react-navigation/native';
 const SearchResults = (props) => {
   // Receiving data from DestinationSearch
   const route = useRoute();
-  console.log(route.params);
+
+  // console.log(route.params);
+  const {originPlace, destinationPlace} = route.params;
+  // console.log(originPlace);
+  // console.log(destinationPlace);
 
   return (
     <View style={{
@@ -17,7 +21,7 @@ const SearchResults = (props) => {
       justifyContent: 'space-between',
     }}>
       <View style={{height: Dimensions.get('window'). height - 400}}>
-        <RouteMap />
+        <RouteMap origin={originPlace} destination={destinationPlace} />
       </View>
 
       <View style={{ height: 400, width: 406, backgroundColor: '#ffffff' }}>
