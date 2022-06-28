@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-grabuber-dev-194455-authRole",
+      "UnauthRoleArn": "arn:aws:iam::206263743137:role/amplify-grabuber-dev-194455-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::206263743137:role/amplify-grabuber-dev-194455-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-grabuber-dev-194455-deployment",
+      "UnauthRoleName": "amplify-grabuber-dev-194455-unauthRole",
+      "StackName": "amplify-grabuber-dev-194455",
+      "StackId": "arn:aws:cloudformation:eu-central-1:206263743137:stack/amplify-grabuber-dev-194455/a5a2f170-f701-11ec-a51b-0ae79e4c5888",
+      "AmplifyAppId": "d2diink5hgr1zg"
+    }
+  }
+}

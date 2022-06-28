@@ -3,9 +3,11 @@ import React, {useEffect} from 'react';
 import { StatusBar, View, PermissionsAndroid, Platform } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 import RootNavigator from './src/navigation/Root';
+import { Amplify } from 'aws-amplify';
+import awsconfig from './src/aws-exports';
 
+Amplify.configure(awsconfig);
 navigator.geolocation = require('@react-native-community/geolocation');
-console.log(navigator.geolocation);
 
 export default function App() {
   // Function to request location permission for Android
