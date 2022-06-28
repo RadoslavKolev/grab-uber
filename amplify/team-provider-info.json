@@ -9,7 +9,19 @@
       "UnauthRoleName": "amplify-grabuber-dev-194455-unauthRole",
       "StackName": "amplify-grabuber-dev-194455",
       "StackId": "arn:aws:cloudformation:eu-central-1:206263743137:stack/amplify-grabuber-dev-194455/a5a2f170-f701-11ec-a51b-0ae79e4c5888",
-      "AmplifyAppId": "d2diink5hgr1zg"
+      "AmplifyAppId": "d2diink5hgr1zg",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-grabuber-dev-194455-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "grabuber82472c5b82472c5b": {}
+      },
+      "function": {
+        "grabuber82472c5b82472c5bPostConfirmation": {
+          "deploymentBucketName": "amplify-grabuber-dev-194455-deployment",
+          "s3Key": "amplify-builds/grabuber82472c5b82472c5bPostConfirmation-6d624266565376776e6c-build.zip"
+        }
+      }
     }
   }
 }

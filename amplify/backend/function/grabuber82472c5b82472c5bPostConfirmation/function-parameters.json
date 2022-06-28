@@ -1,0 +1,17 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "grabuber82472c5b82472c5b",
+  "functionName": "grabuber82472c5b82472c5bPostConfirmation",
+  "resourceName": "grabuber82472c5b82472c5bPostConfirmation",
+  "parentStack": "auth",
+  "triggerEnvs": [],
+  "triggerDir": "C:\\snapshot\\repo\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostConfirmation",
+  "triggerTemplate": "PostConfirmation.json.ejs",
+  "triggerEventPath": "PostConfirmation.event.json",
+  "roleName": "grabuber82472c5b82472c5bPostConfirmation",
+  "skipEdit": true,
+  "enableCors": false
+}
