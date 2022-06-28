@@ -1,15 +1,18 @@
+/* eslint-disable react-native/no-inline-styles */
+
 import 'react-native-gesture-handler';
 import React, {useEffect} from 'react';
 import { StatusBar, View, PermissionsAndroid, Platform } from 'react-native';
 import Geolocation from '@react-native-community/geolocation';
 import RootNavigator from './src/navigation/Root';
 import { Amplify } from 'aws-amplify';
+import { withAuthenticator } from 'aws-amplify-react-native';
 import awsconfig from './src/aws-exports';
 
 Amplify.configure(awsconfig);
 navigator.geolocation = require('@react-native-community/geolocation');
 
-export default function App() {
+function App() {
   // Function to request location permission for Android
   // Geolocation.requestAuthorization() doesn't work on Android
   const requestLocationPermission = async () => {
@@ -55,3 +58,5 @@ export default function App() {
     </View>
   );
 }
+
+export default withAuthenticator(App);
