@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "grabuber",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authgrabuber82472c5b82472c5b",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "grabuber",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "D:\\Projects\\GrabUber\\amplify\\backend\\api\\grabuber\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authgrabuber82472c5b82472c5b"
+    }
+  }
+}
