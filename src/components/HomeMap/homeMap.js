@@ -1,11 +1,36 @@
 /* eslint-disable react-native/no-inline-styles */
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image } from 'react-native';
 import MapView, { PROVIDER_GOOGLE, Marker } from 'react-native-maps';
-import cars from '../../assets/data/cars';
+import { API, graphqlOperation} from 'aws-amplify';
+import { listCars } from '../../graphql/queries';
+// import cars from '../../assets/data/cars';
 
 const HomeMap = (props) => {
+  const [cars, setCars] = useState([]);
+
+  // It's called once when the component mounts
+  // Fetching the cars from the database
+  useEffect(() => {
+    const fetchCars = async () => {
+      try {
+        const response = await API.graphql(
+          graphqlOperation(
+            listCars
+          )
+        );
+
+        setCars(response.data.listCars.items);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    fetchCars();
+  }, []);
+
+  // Function for rendering the car images
   const getImage = (type) => {
     if (type === 'UberX') {
       return require('../../assets/images/top-UberX.png');
