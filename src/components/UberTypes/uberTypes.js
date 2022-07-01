@@ -5,12 +5,8 @@ import { View, Text, Pressable } from 'react-native';
 import UberTypeRows from '../UberTypeRows/uberTypeRows';
 import typesData from '../../assets/data/types';
 
-const UberTypes = ({ typeState }) => {
+const UberTypes = ({ typeState, onSubmit }) => {
   const [selectedType, setSelectedType] = typeState;
-
-  const confirm = () => {
-    console.warn('confirm');
-  };
 
   return (
     <View>
@@ -24,7 +20,7 @@ const UberTypes = ({ typeState }) => {
       )}
       {/* Button */}
       <Pressable
-        onPress={confirm}
+        onPress={onSubmit}
         style={{
           width: '95%',
           backgroundColor: 'black',
