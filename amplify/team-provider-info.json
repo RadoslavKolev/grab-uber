@@ -19,7 +19,7 @@
       "function": {
         "grabuber82472c5b82472c5bPostConfirmation": {
           "deploymentBucketName": "amplify-grabuber-dev-194455-deployment",
-          "s3Key": "amplify-builds/grabuber82472c5b82472c5bPostConfirmation-656c49714c6c494b3239-build.zip"
+          "s3Key": "amplify-builds/grabuber82472c5b82472c5bPostConfirmation-582b702b3245444f5550-build.zip"
         }
       }
     }

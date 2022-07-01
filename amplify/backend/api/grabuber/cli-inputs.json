@@ -7,6 +7,14 @@
     "defaultAuthType": {
       "mode": "AMAZON_COGNITO_USER_POOLS",
       "cognitoUserPoolId": "authgrabuber82472c5b82472c5b"
-    }
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 90,
+        "apiKeyExpirationDate": "2022-09-29T08:35:44.232Z",
+        "keyDescription": "Some description, dunno"
+      }
+    ]
   }
 }

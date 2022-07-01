@@ -63,7 +63,16 @@
               "userPoolId": "authgrabuber82472c5b82472c5b"
             }
           },
-          "additionalAuthenticationProviders": []
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "API_KEY",
+              "apiKeyConfig": {
+                "apiKeyExpirationDays": 90,
+                "apiKeyExpirationDate": "2022-09-29T08:35:44.232Z",
+                "description": "Some description, dunno"
+              }
+            }
+          ]
         }
       }
     }
