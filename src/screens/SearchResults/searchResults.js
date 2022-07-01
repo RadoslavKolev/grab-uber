@@ -1,9 +1,9 @@
 /* eslint-disable react-native/no-inline-styles */
 
 import React, { useState } from 'react';
-import { View, Dimensions } from 'react-native';
+import { View, Dimensions, Alert } from 'react-native';
 import { API, graphqlOperation, Auth } from 'aws-amplify';
-import { useRoute } from '@react-navigation/native';
+import { useRoute, useNavigation } from '@react-navigation/native';
 import RouteMap from '../../components/RouteMap/routeMap';
 import UberTypes from '../../components/UberTypes/uberTypes';
 import { createOrder } from '../../graphql/mutations';
@@ -13,6 +13,7 @@ const SearchResults = (props) => {
 
   // Receiving data from DestinationSearch
   const route = useRoute();
+  const navigation = useNavigation();
   const {originPlace, destinationPlace} = route.params;
 
   const onSubmit = async () => {
@@ -49,6 +50,15 @@ const SearchResults = (props) => {
       );
 
       console.log(response);
+
+      Alert.alert(
+        'Order Confirmed',
+        'Your order has been submitted',
+        [{
+          text: 'Go Home',
+          onPress: () => navigation.navigate('HomeScreen'),
+        }]
+      );
     } catch (err) {
       console.error(err);
     }
