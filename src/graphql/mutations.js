@@ -22,7 +22,6 @@ export const createUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -47,7 +46,6 @@ export const updateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -72,7 +70,6 @@ export const deleteUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -172,7 +169,6 @@ export const createOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
@@ -209,7 +205,6 @@ export const updateOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
@@ -246,7 +241,6 @@ export const deleteOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {

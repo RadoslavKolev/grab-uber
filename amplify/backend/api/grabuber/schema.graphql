@@ -1,33 +1,30 @@
-input AMPLIFY { globalAuthRule: AuthRule = { allow: public } }
-
-type User 
-  @model
-  @auth(rules: [{ allow: owner }]) 
-{
-  id: ID! @primaryKey
+type User @model {
+  id: ID!
   username: String!
   email: String!
 
-  orders: [Order] @hasMany(indexName: "byUser", fields: ["id"])
+  orders: [Order] @connection(keyName: "byUser", fields: ["id"])
 }
 
 type Car @model {
-  id: ID! @primaryKey
+  id: ID!
   type: String!
   latitude: Float,
   longitude: Float,
   heading: Float,
 
-  orders: [Order] @hasMany(indexName: "byCar", fields: ["id"])
+  orders: [Order] @connection(keyName: "byCar", fields: ["id"])
 }
 
-type Order @model {
-  id: ID! @primaryKey
+type Order @model 
+  @key(name: "byUser", fields: ["userId"])
+  @key(name: "byCar", fields: ["carId", "createdAt"]) {
+  id: ID!
   createdAt: ID!
 
-  userId: ID! @index(name: "byUser")
-  user: User @hasOne(fields: ["userId"])
+  userId: ID! 
+  user: User @connection(fields: ["userId"]) 
 
-  carId: ID! @index(name: "byCar", sortKeyFields: ["createdAt"])
-  car: Car @hasOne(fields: ["carId"])
+  carId: ID! 
+  car: Car @connection(fields: ["carId"])
 }

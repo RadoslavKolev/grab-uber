@@ -20,7 +20,6 @@ export type AmplifyDependentResourcesAttributes = {
     },
     "api": {
         "grabuber": {
-            "GraphQLAPIKeyOutput": "string",
             "GraphQLAPIIdOutput": "string",
             "GraphQLAPIEndpointOutput": "string"
         }

@@ -19,25 +19,16 @@ export const getUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const listUsers = /* GraphQL */ `
   query ListUsers(
-    $id: ID
     $filter: ModelUserFilterInput
     $limit: Int
     $nextToken: String
-    $sortDirection: ModelSortDirection
   ) {
-    listUsers(
-      id: $id
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      sortDirection: $sortDirection
-    ) {
+    listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         username
@@ -47,7 +38,6 @@ export const listUsers = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }
@@ -78,19 +68,11 @@ export const getCar = /* GraphQL */ `
 `;
 export const listCars = /* GraphQL */ `
   query ListCars(
-    $id: ID
     $filter: ModelCarFilterInput
     $limit: Int
     $nextToken: String
-    $sortDirection: ModelSortDirection
   ) {
-    listCars(
-      id: $id
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      sortDirection: $sortDirection
-    ) {
+    listCars(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         type
@@ -122,7 +104,6 @@ export const getOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
@@ -143,19 +124,11 @@ export const getOrder = /* GraphQL */ `
 `;
 export const listOrders = /* GraphQL */ `
   query ListOrders(
-    $id: ID
     $filter: ModelOrderFilterInput
     $limit: Int
     $nextToken: String
-    $sortDirection: ModelSortDirection
   ) {
-    listOrders(
-      id: $id
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-      sortDirection: $sortDirection
-    ) {
+    listOrders(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         createdAt
@@ -166,7 +139,6 @@ export const listOrders = /* GraphQL */ `
           email
           createdAt
           updatedAt
-          owner
         }
         carId
         car {

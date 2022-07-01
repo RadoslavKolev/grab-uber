@@ -2,8 +2,8 @@
 // this is an auto generated file. This will be overwritten
 
 export const onCreateUser = /* GraphQL */ `
-  subscription OnCreateUser($owner: String) {
-    onCreateUser(owner: $owner) {
+  subscription OnCreateUser {
+    onCreateUser {
       id
       username
       email
@@ -19,13 +19,12 @@ export const onCreateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateUser = /* GraphQL */ `
-  subscription OnUpdateUser($owner: String) {
-    onUpdateUser(owner: $owner) {
+  subscription OnUpdateUser {
+    onUpdateUser {
       id
       username
       email
@@ -41,13 +40,12 @@ export const onUpdateUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteUser = /* GraphQL */ `
-  subscription OnDeleteUser($owner: String) {
-    onDeleteUser(owner: $owner) {
+  subscription OnDeleteUser {
+    onDeleteUser {
       id
       username
       email
@@ -63,7 +61,6 @@ export const onDeleteUser = /* GraphQL */ `
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -151,7 +148,6 @@ export const onCreateOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
@@ -185,7 +181,6 @@ export const onUpdateOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
@@ -219,7 +214,6 @@ export const onDeleteOrder = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       carId
       car {
