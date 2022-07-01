@@ -5,17 +5,22 @@ import { View, Text, Pressable } from 'react-native';
 import UberTypeRows from '../UberTypeRows/uberTypeRows';
 import typesData from '../../assets/data/types';
 
-const UberTypes = (props) => {
+const UberTypes = ({ typeState }) => {
+  const [selectedType, setSelectedType] = typeState;
+
   const confirm = () => {
     console.warn('confirm');
   };
 
   return (
     <View>
-      {typesData.map(
-        (type) => <UberTypeRows
-         key={type.id}
-         type={type} />
+      {typesData.map(type =>
+        <UberTypeRows
+          key={type.id}
+          type={type}
+          isSelected={type.type === selectedType}
+          onPress={() => setSelectedType(type.type)}
+        />
       )}
       {/* Button */}
       <Pressable

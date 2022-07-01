@@ -1,12 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Dimensions } from 'react-native';
 import RouteMap from '../../components/RouteMap/routeMap';
 import UberTypes from '../../components/UberTypes/uberTypes';
 import { useRoute } from '@react-navigation/native';
 
 const SearchResults = (props) => {
+  const typeState = useState(null);
+
   // Receiving data from DestinationSearch
   const route = useRoute();
 
@@ -25,7 +27,7 @@ const SearchResults = (props) => {
       </View>
 
       <View style={{ height: 400, width: 406, backgroundColor: '#ffffff' }}>
-        <UberTypes />
+        <UberTypes typeState={typeState} />
       </View>
     </View>
   );

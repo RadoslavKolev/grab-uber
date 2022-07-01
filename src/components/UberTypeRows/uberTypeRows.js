@@ -1,10 +1,12 @@
+/* eslint-disable react-native/no-inline-styles */
+
 import React from 'react';
-import { View, Image, Text } from 'react-native';
+import { View, Image, Text, Pressable } from 'react-native';
 import styles from './styles';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const UberTypeRows = (props) => {
-  const {type} = props;
+  const {type, onPress, isSelected} = props;
 
   const getImage = () => {
     if (type.type === 'UberX') {
@@ -17,7 +19,12 @@ const UberTypeRows = (props) => {
   };
 
   return (
-    <View style={styles.container}>
+    <Pressable
+      onPress={onPress}
+      style={[styles.container, {
+        backgroundColor: isSelected ? '#efefef' : '#ffffff',
+      }]}
+    >
       {/* Image */}
       <Image
         style={styles.image}
@@ -41,7 +48,7 @@ const UberTypeRows = (props) => {
       />
       <Text style={styles.price}>est. {type.price}</Text>
       </View>
-    </View>
+    </Pressable>
   );
 };
 
