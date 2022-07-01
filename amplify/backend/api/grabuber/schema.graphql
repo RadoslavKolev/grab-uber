@@ -22,9 +22,17 @@ type Order @model
   id: ID!
   createdAt: ID!
 
+  type: String!
+
+  originLatitude: Float!
+  originLongitude: Float!
+
+  destinationLatitude: Float!
+  destinationLongitude: Float!
+
   userId: ID! 
   user: User @connection(fields: ["userId"]) 
 
   carId: ID! 
-  car: Car @connection(fields: ["carId"])
+  car: Car @connection(fields: ["carId"]) 
 }
