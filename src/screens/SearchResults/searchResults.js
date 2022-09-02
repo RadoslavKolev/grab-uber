@@ -78,7 +78,7 @@ const SearchResults = (props) => {
 
       Alert.alert(
         'Order Confirmed',
-        'Your order has been submitted',
+        'Your Driver is on the way',
         [{
           text: 'Go Home',
           onPress: () => navigation.navigate('HomeScreen'),
