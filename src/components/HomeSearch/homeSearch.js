@@ -35,7 +35,7 @@ const HomeSearch = (props) => {
         <View style={styles.iconContainer}>
           <AntDesign name={'clockcircle'} size={20} color={'#ffffff'} />
         </View>
-        <Text style={styles.destinationText}>Spin Nightclub</Text>
+        <Text style={styles.destinationText}>Plaza Night Club</Text>
       </View>
 
       {/* Home destination */}

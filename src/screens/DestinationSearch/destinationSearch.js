@@ -37,6 +37,9 @@ const DestinationSearch = (props) => {
       <View style={styles.container}>
       <GooglePlacesAutocomplete
           placeholder="Where from?"
+          textInputProps={{
+            placeholderTextColor: '#a1a1a1',
+          }}
           fetchDetails={true}
           returnKeyType={'search'}
           minLength={2}
@@ -66,6 +69,10 @@ const DestinationSearch = (props) => {
         />
         <GooglePlacesAutocomplete
           placeholder="Where to?"
+          textInputProps={{
+            placeholderTextColor: '#a1a1a1',
+            textColor: '#a1a1a1',
+          }}
           fetchDetails={true}
           returnKeyType={'search'}
           minLength={2}

@@ -47,7 +47,7 @@ const RouteMap = ({ origin, destination }) => {
       style={{
         height: '100%',
         width: '100%',
-        minHeight: '50%',
+        minHeight: '40%',
       }}
       onMapReady={onMapReadyHandler}
       onMapLoaded={onMapReadyHandler}

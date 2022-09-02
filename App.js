@@ -10,6 +10,7 @@ import { withAuthenticator } from 'aws-amplify-react-native';
 import awsconfig from './src/aws-exports';
 
 Amplify.configure(awsconfig);
+
 navigator.geolocation = require('@react-native-community/geolocation');
 
 function App() {
@@ -20,9 +21,9 @@ function App() {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
         {
-          title: 'GrabUber Location Permission',
+          title: 'Take a Ride Location Permission',
           message:
-            'GrabUber needs access to your location ' +
+            'Take a Ride needs access to your location ' +
             'so the uber driver can find you easily.',
           buttonNeutral: 'Ask Me Later',
           buttonNegative: 'Cancel',

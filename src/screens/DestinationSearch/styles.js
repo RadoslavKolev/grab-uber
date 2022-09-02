@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
   textInput: {
     padding: 5,
     backgroundColor: '#eee',
+    color: '#000',
     marginVertical: 5,
   },
 
